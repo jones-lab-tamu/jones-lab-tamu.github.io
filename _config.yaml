@@ -1,7 +1,7 @@
 # site properties and page defaults
-title: jones-lab-tamuDESCRIPTION=Understanding genes, neurons, and circuits regulating circadian rhythms in behavior and physiology.
-subtitle: 
-description: 
+title: Understanding genes, neurons, and circuits regulating circadian rhythms in behavior and physiology.
+subtitle: Testing to see wher this shows up
+description: and also this
 header: images/background.jpg
 footer: images/background.jpg
 proofer: false
