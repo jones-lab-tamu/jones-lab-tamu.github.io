@@ -8,7 +8,7 @@ proofer: false
 
 # site social media and other links
 links:
-  email: Placeholder
+  email: no_email
   orcid: Placeholder
   google-scholar: ETJoidYAAAAJ
   github: jones-lab-tamu
