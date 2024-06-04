@@ -8,11 +8,11 @@ proofer: false
 
 # site social media and other links
 links:
-  email: no_email
-  orcid: Placeholder
-  google-scholar: ETJoidYAAAAJ
+  email: joneslab.tamu@gmail.com
+  orcid: 0000-0002-8386-7798
+  google-scholar: A71ldkkAAAAJ
   github: jones-lab-tamu
-  twitter: Placeholder
+  twitter: jonesjeffr
 
 ### jekyll settings
 
