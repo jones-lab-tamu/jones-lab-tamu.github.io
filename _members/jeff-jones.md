@@ -1,13 +1,7 @@
 ---
 name: Jeff Jones
-image: images/photo.jpg
+image: images/Vanessa.jpg
 role: pi
-aliases:
-  - J. Jones
-  - J Jones
-links:
-  home-page: https://janesmith.com
-  orcid: 0000-0001-8713-9213
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

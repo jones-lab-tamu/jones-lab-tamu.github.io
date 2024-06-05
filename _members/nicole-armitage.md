@@ -1,6 +1,6 @@
 ---
 name: Nicole Armitage
-image: images/Nicole_Portrait.jpg
+image: images/Nicole.jpg
 role: phd
 description: PhD Student
 ---
