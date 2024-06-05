@@ -1,6 +1,6 @@
 ---
 name: Vanessa Muhl
-image: images/Vanessa_Portrait.jpg
+image: images/Nicole_Portrait.jpg
 description: Lab Manager
 role: manager
 links:

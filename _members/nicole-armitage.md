@@ -1,5 +1,5 @@
 ---
-name: Nicole Armitage!
+name: Nicole Armitage
 image: images/Nicole_Portrait.jpg
 role: phd
 description: PhD Student
