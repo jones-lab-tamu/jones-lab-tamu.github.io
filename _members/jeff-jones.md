@@ -1,7 +1,8 @@
 ---
 name: Jeff Jones
-image: images/Vanessa.jpg
+image: images/photo.jpg
 role: pi
+description: Principal Investigator
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
