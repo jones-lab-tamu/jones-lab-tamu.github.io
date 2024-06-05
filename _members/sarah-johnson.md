@@ -1,8 +1,8 @@
 ---
-name: Sarah Johnson
-image: images/photo.jpg
-description: Lead Programmer
-role: programmer
+name: Vanessa Muhl
+image: images/Vanessa_Portrait.jpg
+description: Lab Manager
+role: manager
 links:
   email: sarah.johnson@gmail.com
   twitter: sarahjohnson

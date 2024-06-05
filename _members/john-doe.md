@@ -1,6 +1,6 @@
 ---
-name: John Doe
-image: images/photo.jpg
+name: Nicole Armitage
+image: images/Nicole_Portrait.jpg
 role: phd
 group: alum
 links:
