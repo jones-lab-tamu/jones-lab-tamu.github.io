@@ -1,5 +1,5 @@
 ---
-name: Farina
+name: Farina Mohammadpourmir
 image: images/photo.jpg
 role: phd
 description: PhD Student
