@@ -1,14 +1,8 @@
 ---
 name: Jeff Jones
-image: images/photo.jpg
+image: images/Jeff.webp
 role: pi
 description: Principal Investigator
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Faucibus purus in massa tempor nec feugiat nisl pretium fusce.
-Elit at imperdiet dui accumsan.
-Duis tristique sollicitudin nibh sit amet commodo nulla facilisi.
-Vitae elementum curabitur vitae nunc sed velit dignissim sodales.
-Lacinia at quis risus sed vulputate odio ut.
-Magna eget est lorem ipsum.
+Jeff obtained his Ph.D. in 2015 in the lab of Dr. Douglas McMahon at Vanderbilt University where his research focused on the bidirectional relationship between the molecular and electrical rhythms in the brain's biological clock, the suprachiasmatic nucleus (SCN). After a brief postdoc with Dr. Luis de Lecea at Stanford University to learn in vivo imaging, Jeff joined the lab of Dr. Erik Herzog at Washington University in St. Louis in 2016, where he studied the inputs to and outputs from the SCN that together generate circadian rhythms in behavior and physiology. In 2021, Jeff started his lab in the Department of Biology at Texas A&M.
