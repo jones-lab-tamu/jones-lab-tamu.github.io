@@ -1,6 +1,6 @@
 ---
 name: Jordan Cook
-image: images/photo.jpg
+image: images/Jordan.jpg
 role: phd
 description: PhD Student
 ---
