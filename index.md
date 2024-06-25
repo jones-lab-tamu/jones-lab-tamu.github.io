@@ -74,7 +74,7 @@ The greatest team of researchers ever!
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/Lab.jpg"
   link="team"
   title="Our Team"
   text=text
