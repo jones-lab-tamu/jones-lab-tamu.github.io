@@ -26,7 +26,7 @@ The overarching research goal of the Jones Lab is to understand how circadian ou
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/research_icon.jpg"
   link="research"
   title="Our Research"
   text=text
