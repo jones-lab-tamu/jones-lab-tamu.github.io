@@ -11,7 +11,7 @@
 
 {% capture text %}
 
-Paragraph 1.
+The overarching research goal of the Jones Lab is to understand how circadian output from the SCN is encoded by downstream neurons to ultimately generate diverse endocrine, autonomic, and behavioral rhythms with different phases and waveforms.
 
 {%
   include button.html
