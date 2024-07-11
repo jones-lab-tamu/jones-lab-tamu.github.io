@@ -34,7 +34,7 @@ The overarching research goal of the Jones Lab is to understand how circadian ou
 
 {% capture text %}
 
-Paragraph 2.
+Current projects in our lab include defining the "transfer function" in target neurons to understand SCN rhythm encoding, investigating the influence of hormones and sex on circadian outputs, and exploring how the circadian system distinguishes between daily SCN input and non-circadian noise to maintain reliable timing cues.
 
 {%
   include button.html
