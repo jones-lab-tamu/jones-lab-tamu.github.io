@@ -49,7 +49,7 @@ Current projects in our lab include defining the "transfer function" in target n
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/project_icon.png"
   link="projects"
   title="Our Projects"
   flip=true
