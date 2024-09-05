@@ -1,0 +1,13 @@
+---
+layout: default
+title:  Jones Lab
+categories:
+ - misc
+---
+{% for page in site.categories.misc %}
+{% if page.about %}
+	{% assign aboutpage = page %}
+{% endif %}
+{% endfor %}
+
+{{ aboutpage.content }}

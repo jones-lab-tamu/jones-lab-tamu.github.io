@@ -1,0 +1,86 @@
+---
+layout: default
+title: Bard Lab / news
+categories:
+ - news
+category: news
+---
+
+<!-- Pagination -->
+<nav aria-label="Page navigation">
+	<ul class="pagination justify-content-center">
+	  {% if paginator.previous_page %}
+		{% if paginator.previous_page == 1 %}
+		  <li class="page-item">
+			<a class="page-link" href="/{{ page.category }}/" aria-label="Previous">
+			  <span aria-hidden="true">&laquo;</span>
+			</a>
+		  </li>
+		{% else %}
+		  <li class="page-item">
+			<a class="page-link" href="/{{ page.category }}/page{{ paginator.previous_page }}" aria-label="Previous">
+			  <span aria-hidden="true">&laquo;</span>
+			</a>
+		  </li>
+		{% endif %}  		
+	  {% endif %}  
+  
+	  {% if paginator.next_page %}  
+		<li class="page-item">
+		  <a class="page-link" href="/{{ page.category }}/page{{ paginator.next_page }}" aria-label="Next">
+			<span aria-hidden="true">&raquo;</span>
+		  </a>
+		</li>
+	  {% endif %} 
+	</ul>
+  </nav>
+  
+  <!-- Posts -->
+  {% for post in site.categories.news %}
+  
+	{% for member in site.categories.team %}
+	  {% if member.handle == post.author_handle %}
+		{% assign author = member %}
+	  {% endif %}
+	{% endfor %}
+  
+	<div class="mb-5"> <!-- Replaced bigspacer with Bootstrap spacing utility -->
+	  <div class="row">
+		<div class="col-md-3">
+		  <h3>{{ post.title }}</h3> <!-- Updated to a heading tag -->
+		  <p class="text-muted"> <!-- Updated to a paragraph with muted text -->
+			{{ post.date | date_to_string }}
+			{% if author %}
+			by <a href="{{ author.url }}">{{ author.handle }}</a>
+			{% endif %}
+		  </p>
+		</div>
+		<div class="col-md-8">
+		  {% if post.image %}
+		  <a href="{{ post.url }}"><img src="{{ post.image }}" alt="{{ post.title }}" class="img-fluid"> <!-- Updated for responsive images -->
+		  </a>
+		  {% endif %}
+		  <div>
+			{{ post.content }}
+		  </div>
+		</div>
+		<div class="col-md-1"></div>
+	  </div>
+	</div>
+  
+  {% endfor %}
+  
+  <!-- Archive Link -->
+  <div class="mb-5"> <!-- Replaced bigspacer with Bootstrap spacing utility -->
+	<div class="row">
+	  <div class="col-md-12 text-center">
+		<a href="/{{ page.category }}/archive/">
+		  <h4>Archive</h4> <!-- Updated to a heading tag -->
+		  <i class="fas fa-chevron-circle-down fa-2x text-muted"></i> <!-- Assuming Font Awesome 5+ -->
+		</a>
+	  </div>
+	</div>
+  </div>
+  
+  <div class="mb-5"></div> <!-- Replaced bigspacer with Bootstrap spacing utility -->
+  

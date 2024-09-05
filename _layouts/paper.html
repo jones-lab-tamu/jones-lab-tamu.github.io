@@ -1,0 +1,147 @@
+---
+layout: default
+---
+
+<div class="bigspacer"></div>
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="media">
+			{% if page.image %}
+			<img class="pull-left pad-right media-object paper-image" src="{{ page.image }}" alt="graphical abstract for {{ page.title }}">
+			{% endif %}
+		</div>
+	</div>
+
+	<div class="col-md-9">
+		<div class="media-body titlebox">
+			<div class="title media-heading">
+				{% if page.preprint %}
+					<div class="smallhead">
+					PREPRINT (not yet peer-reviewed)
+					</div>
+				{% endif %}
+				{{ page.title }}
+			</div>
+			<p>
+			<div class="smallhead">
+				{{ page.authors }}. 
+				<span class="journal">
+				{{ page.journal }}
+				</span>
+				({{ page.year }}).
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bigspacer"></div>
+
+<div class="row">
+	<div class="col-md-3" style="word-break: break-all;">
+		<div class="bigspacer"></div>
+		<div class="note">
+			{% if page.pdf or page.pdflink or page.fulltext %}
+			<div class="smallhead subtle">
+				Full text
+			</div>	
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				{% if page.pdflink %}
+					<i class="fa fa-file-pdf-o fa-fw"></i>
+					{% if page.preprint %}
+					<a class="off" href="{{ page.pdflink }}">Preprint PDF</a>
+					{% else %}
+					<a class="off" href="{{ page.pdflink }}">Journal PDF</a>
+					{% endif %}
+					<br/>
+				{% endif %}
+				{% if page.pdf %}
+					<i class="fa fa-file-pdf-o fa-fw"></i>
+					<a class="off" href="{{ page.pdf }}">PDF</a>
+					<br/>
+				{% endif %}
+				{% if page.fulltext %}
+				<i class="fa fa-external-link fa-fw"></i>
+				{% if page.preprint %}
+				<a class="off" href="{{ page.fulltext }}">Preprint HTML</a>
+				{% else %}
+				<a class="off" href="{{ page.fulltext }}">Journal HTML</a>
+				{% endif %}
+			</div>
+			<div class="bigspacer"></div>			
+			{% endif %}
+
+			{% if page.supplement %}
+			<div class="smallhead subtle">
+				Supplement
+			</div>	
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-paperclip fa-fw"></i>
+				<a class="off" href="{{ page.supplement }}">{{ page.supplement | split: '/' | last }}</a>
+			</div>
+			<div class="bigspacer"></div>			
+			{% endif %}
+
+			{% if page.pmid %}
+				<div class="smallhead subtle">
+					PubMed
+				</div>
+				<div class="pad-left note">
+					<div class="smallspacer"></div>
+					<i class="fa fa-external-link fa-fw"></i>
+					<a class="off" href="http://www.ncbi.nlm.nih.gov/pubmed/{{ page.pmid }}">PMID: {{ page.pmid }}</a>
+				</div>
+				<div class="bigspacer"></div>
+			{% endif %}
+	
+			{% if page.doi %}
+				<div class="smallhead subtle">
+					DOI
+				</div>
+				<div class="pad-left note">
+					<div class="smallspacer"></div>
+					<i class="fa fa-external-link fa-fw"></i>
+					<a class="off" href="http://dx.doi.org/{{ page.doi }}">{{ page.doi }}</a>
+				</div>
+				<div class="bigspacer"></div>			
+			{% endif %}
+			
+			{% if page.github %}
+				<div class="smallhead subtle">
+					Source code
+				</div>	
+				<div class="pad-left note">
+					<div class="smallspacer"></div>
+					<i class="fa fa-cog fa-fw"></i>
+					<a class="off" href="{{ page.github }}">{{ page.github | remove: 'http://' | remove: 'https://' }}</a>
+				</div>
+				<div class="bigspacer"></div>
+			{% endif %}
+
+			{% if page.dryad_doi %}
+				<di	v class="smallhead subtle">
+					Data
+				</div>
+				<div class="pad-left note">
+					<div class="smallspacer"></div>
+					<i class="fa fa-database fa-fw"></i>
+					<a class="off" href="http://dx.doi.org/{{ page.dryad_doi }}">Dryad</a>
+				</div>
+				<div class="bigspacer"></div>			
+			{% endif %}
+			<div class="bigspacer"></div>			
+			{% endif %}
+		</div>
+	</div>
+	<div class="col-md-8">	
+		<div class="post">
+			{{ content }}
+		</div>	
+	</div>
+
+	<div class="col-md-1"></div>
+</div>
+
+<div class="bigspacer"></div>

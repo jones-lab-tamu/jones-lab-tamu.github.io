@@ -1,0 +1,46 @@
+---
+layout: default
+title: Jones Lab / papers
+categories:
+ - papers
+---
+<!-- still need to fix paper format imported from Allan-->
+<!-- organizes papers into 3 columns-->
+<!-- keeps track of column index in order to start and end rows-->
+<div class="bigspacer"></div> 
+{% assign memberindex = 0 %}
+{% assign colindex = 0 %}
+{% assign previousYear = "9999" %} <!-- tracker for putting header -->
+    <h1>Jones Lab papers</h1>
+    <div class="bigspacer"></div> 
+{% for paper in site.categories.papers %}
+  {% if paper.skip == true %}
+    {% continue %}
+  {% endif %}
+  {% if paper.year > "2021" %}
+    {% assign memberindex = memberindex | plus: 1 %} <!-- tracker for column formatting -->
+    {% assign colindex = memberindex | modulo: 3 %}
+    {% include paper_display.html %}
+  {% elsif paper.year <= "2021" and previousYear > "2021" %} <!-- first paper of 2022-->
+    {% if colindex != 0 %} <!-- close last open row -->
+      </div><div class="bigspacer"></div>
+    {% endif %}      
+    <!-- Insert your header for papers <= 2021 here -->
+    <h1>Previous papers</h1>
+    <div class="bigspacer"></div> 
+    {% assign memberindex = 1 %} <!-- reset column index -->
+    {% assign colindex = memberindex | modulo: 3 %}
+    {% include paper_display.html %}
+  {% else %}
+    {% assign memberindex = memberindex | plus: 1 %} <!-- tracker for column formatting -->
+    {% assign colindex = memberindex | modulo: 3 %}
+    {% include paper_display.html %}
+  {% endif %}
+
+  {% assign previousYear = paper.year %}
+{% endfor %}
+
+{% if colindex != 0 %} <!-- close last open row -->
+</div><div class="bigspacer"></div>
+{% endif %}
+<div class="bigspacer"></div>

@@ -1,0 +1,253 @@
+---
+layout: default
+title: Jones Lab / approaches
+categories: 
+ - approaches
+category: approaches
+---
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="title">
+                Approaches
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Circadian Behavioral Analysis -->
+	<!-- techs: behavior -->
+    <div class="row align-items-center">
+        <div class="col-lg-3">
+            <img src="/images/misc/behavior.png" alt="Circadian behavior" width="75%" height="auto" class="img-responsive">
+        </div>
+        <div class="col-lg-9">
+            <h3>Circadian behavioral analysis</h3>
+            <p>(wheel running, infrared tracking, feeding)</p>
+            <ul>
+                {% for paper in site.categories.papers %}
+                    {% assign paper_techs = paper.techs | split: " " %}
+                    {% if paper_techs contains 'behavior' %}
+                    <li>
+                        <a href="{{ paper.url }}">{{ paper.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="bigspacer"></div>
+
+    <!-- Neuromodulation -->
+	<!-- techs: opto -->
+    <div class="row align-items-center">
+        <div class="col-lg-3">
+            <img src="/images/misc/opto.png" alt="Neuromodulation" width="75%" height="auto" class="img-responsive">
+        </div>
+        <div class="col-lg-9">
+            <h3>Neuromodulation</h3>
+            <p>(in vivo, in vitro optogenetics, chemogenetics)</p>
+            <ul>
+                {% for paper in site.categories.papers %}
+                    {% assign paper_techs = paper.techs | split: " " %}
+                    {% if paper_techs contains 'opto' %}
+                    <li>
+                        <a href="{{ paper.url }}">{{ paper.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+	
+	<div class="bigspacer"></div>
+
+    <!-- In Vivo Imaging -->
+	<!-- techs: photometry -->
+    <div class="row align-items-center">
+        <div class="col-lg-3">
+            <img src="/images/misc/photometry.png" alt="In vivo imaging" width="75%" height="auto" class="img-responsive">
+        </div>
+        <div class="col-lg-9">
+            <h3>In vivo imaging</h3>
+            <p>(fiber photometry recording of calcium and clock genes)</p>
+            <ul>
+                {% for paper in site.categories.papers %}
+                    {% assign paper_techs = paper.techs | split: " " %}
+                    {% if paper_techs contains 'photometry' %}
+                    <li>
+                        <a href="{{ paper.url }}">{{ paper.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+	
+	<div class="bigspacer"></div>
+
+    <!-- In Vitro Imaging -->
+	<!-- techs: liveslice -->
+    <div class="row align-items-center">
+        <div class="col-lg-3">
+            <img src="/images/misc/liveslice.png" alt="In vitro imaging" width="75%" height="auto" class="img-responsive">
+        </div>
+        <div class="col-lg-9">
+            <h3>In vitro imaging</h3>
+            <p>(time-lapse recording of calcium and clock genes)</p>
+            <ul>
+                {% for paper in site.categories.papers %}
+                    {% assign paper_techs = paper.techs | split: " " %}
+                    {% if paper_techs contains 'liveslice' %}
+                    <li>
+                        <a href="{{ paper.url }}">{{ paper.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+	
+		<div class="bigspacer"></div>
+
+    <!-- Neurogenetics -->
+	<!-- techs: crispr -->
+    <div class="row align-items-center">
+        <div class="col-lg-3">
+            <img src="/images/misc/crispr.png" alt="Neurogenetics" width="75%" height="auto" class="img-responsive">
+        </div>
+        <div class="col-lg-9">
+            <h3>Neurogenetics</h3>
+            <p>(CRISPR/Cas9 editing of clock genes and receptors)</p>
+            <ul>
+                {% for paper in site.categories.papers %}
+                    {% assign paper_techs = paper.techs | split: " " %}
+                    {% if paper_techs contains 'crispr' %}
+                    <li>
+                        <a href="{{ paper.url }}">{{ paper.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+	
+	<div class="bigspacer"></div>
+
+    <!-- Neuroanatomy -->
+	<!-- techs: tracing -->
+    <div class="row align-items-center">
+        <div class="col-lg-3">
+            <img src="/images/misc/tracing.png" alt="Neuroanatomy" width="75%" height="auto" class="img-responsive">
+        </div>
+        <div class="col-lg-9">
+            <h3>Neuroanatomy</h3>
+            <p>(circuit tracing, IHC, confocal imaging)</p>
+            <ul>
+                {% for paper in site.categories.papers %}
+                    {% assign paper_techs = paper.techs | split: " " %}
+                    {% if paper_techs contains 'tracing' %}
+                    <li>
+                        <a href="{{ paper.url }}">{{ paper.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+	
+	<div class="bigspacer"></div>
+
+    <!-- Hormones -->
+	<!-- techs: hormones -->
+    <div class="row align-items-center">
+        <div class="col-lg-3">
+            <img src="/images/misc/hormones.png" alt="Manipulation and measurement of hormones" width="75%" height="auto" class="img-responsive">
+        </div>
+        <div class="col-lg-9">
+            <h3>Manipulation and measurement of hormones</h3>
+            <p>(ELISA, drug delivery, gonadectomy)</p>
+            <ul>
+                {% for paper in site.categories.papers %}
+                    {% assign paper_techs = paper.techs | split: " " %}
+                    {% if paper_techs contains 'hormones' %}
+                    <li>
+                        <a href="{{ paper.url }}">{{ paper.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+	
+	<div class="bigspacer"></div>
+
+    <!-- Machine Learning -->
+	<!-- techs: machinelearning -->
+    <div class="row align-items-center">
+        <div class="col-lg-3">
+            <img src="/images/misc/machinelearning.png" alt="Complex behavioral analysis" width="75%" height="auto" class="img-responsive">
+        </div>
+        <div class="col-lg-9">
+            <h3>Complex behavioral analysis</h3>
+            <p>(video tracking, machine learning)</p>
+            <ul>
+                {% for paper in site.categories.papers %}
+                    {% assign paper_techs = paper.techs | split: " " %}
+                    {% if paper_techs contains 'machinelearning' %}
+                    <li>
+                        <a href="{{ paper.url }}">{{ paper.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+	
+	<div class="bigspacer"></div>
+
+    <!-- Tool Development -->
+	<!-- techs: 3dprint -->
+    <div class="row align-items-center">
+        <div class="col-lg-3">
+            <img src="/images/misc/3dprint.png" alt="Tool development" width="75%" height="auto" class="img-responsive">
+        </div>
+        <div class="col-lg-9">
+            <h3>Open-source tool development</h3>
+            <p>(3D printing, laser cutting, electronics)</p>
+            <ul>
+                {% for paper in site.categories.papers %}
+                    {% assign paper_techs = paper.techs | split: " " %}
+                    {% if paper_techs contains '3dprint' %}
+                    <li>
+                        <a href="{{ paper.url }}">{{ paper.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+	
+	
+	<!-- Final div -->
+</div>
+
+<!-- Additional CSS -->
+<style>
+    .bigspacer {
+        margin-top: 30px;
+    }
+    .row {
+        margin-bottom: 30px;
+    }
+    .img-responsive {
+        max-width: 100%;
+        height: auto;
+    }
+    .align-items-center {
+        align-items: center; /* Align image and content vertically in the row */
+    }
+</style>

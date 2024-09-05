@@ -1,0 +1,21 @@
+{% if colindex == 1 %} <!-- opening of a new row -->
+  <div class="row">
+{% endif %}
+
+<div class="col-md-4 paperbox">
+    <div class="media">
+        <a class="pull-right" href="{{ paper.url }}">
+          <img width=100 class="media-object mr-2" src="{{ paper.image }}" alt="{{ paper.title }}">
+        </a>
+        <div class="media-body">
+            <div class="smallhead media-heading">
+                <a href="{{ paper.url }}" class="off">{{ paper.title }}</a>
+            </div>
+            <p class="note">{{ paper.shortref }}</p>
+        </div>
+    </div>
+</div>
+
+{% if colindex == 0 %} <!-- closing a row -->
+</div><div class="bigspacer"></div>
+{% endif %}

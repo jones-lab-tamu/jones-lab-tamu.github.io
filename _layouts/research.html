@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+<!-- borrowed from premal shah (https://github.com/shahpr/shahlab/blob/master/_layouts/research.html) -->
+
+<div class="blog-post">
+    <div class="row">
+        <div class="col-md-1"></div>    
+        <div class="col-md-10">
+            <!-- Title and Content Section -->
+            <div class="media d-flex align-items-center">
+                <div class="media-body">
+                    <div class="title media-heading">
+                        <a href="{{ page.url }}" class="off">{{ page.title }}</a>
+                    </div><br/>
+                    <div class="post">
+                        {{content }}
+                    </div>    
+                </div>
+
+                {% if page.image %}
+                <a href="{{ page.url }}">
+                    <img width=300 class="ml-3" src="{{ page.image }}" alt="{{ page.title }}">
+                </a>
+                {% endif %}
+            </div>
+
+            <!-- FIRST SECTION: Team Members -->
+            <div class="bigspacer"></div>
+            <div class="head">Team Members Working on This Project</div>
+            <div class="spacer"></div>
+            <ul>
+                {% assign research_authors = page.author | split: ", " %}
+                {% for member in site.categories.team %}
+                    {% assign member_name = member.title %}
+                    {% assign member_lastname = member_name | split: ' ' | last %}
+                    {% assign member_firstinitial = member_name | split: ' ' | first | slice: 0 %}
+                    {% assign member_shortname = member_lastname | append: " " | append: member_firstinitial %}
+
+                    <!-- Check if member's last name + first initial matches one of the research authors -->
+                    {% if research_authors contains member_shortname %}
+                        <li>
+                            <a href="{{ member.url }}">
+                                <img src="{{ member.image }}" width="50" alt="{{ member.title }}">
+                                {{ member.title }} - {{ member.position }}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+<!-- SECOND SECTION: Publications -->
+<div class="bigspacer"></div>
+<div class="head">Publications</div>
+<div class="spacer"></div>
+
+{% assign publications_found = false %}
+<ul>
+    {% for paper in site.categories.papers %}
+        {% if paper.tags contains page.tag %}
+		{% assign publications_found = true %}
+            <li>
+                <p>{{ paper.title }}
+                <a href="{{ paper.url }}" class="note">{{ paper.shortref }}</a></p>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+{% if publications_found == false %}
+<p>Coming soon!</p>
+{% endif %}
+            
+        </div> <!-- End of col-md-10 -->
+        <div class="col-md-1"></div>
+    </div> <!-- End of row -->
+    
+    <div class="bigspacer"></div>
+    <div class="spacer"></div>	
+
+</div>

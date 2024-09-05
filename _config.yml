@@ -1,0 +1,59 @@
+title: Jones Lab
+description: Circadian circuits lab at Texas A&M University
+url: https://jones-lab.org
+department:
+  name: "Department of Biology"
+  url: "https://www.bio.tamu.edu/"
+
+institution:
+  name: "Texas A&M University"
+  url: "https://www.tamu.edu"
+
+markdown: kramdown
+permalink: /:categories/:title/
+future: true
+sass:
+  sass_dir: scss
+
+plugins:
+  - jekyll-gzip
+  - jekyll-twitter-plugin
+
+gzip:
+  replace_files: true
+
+exclude:
+  - "*.branches"
+  - "*.class"
+  - "*.cpp"
+  - "*.csv"
+  - "*.fasta"
+  - "*.gz"
+  - "*.h"
+  - "*.hh"
+  - "*.ipynb"
+  - "*.jar"
+  - "*.java"
+  - "*.kml"
+  - "*.log"
+  - "*.mcc"
+  - "*.nb"
+  - "*.newick"
+  - "*.nex"
+  - "*.py"
+  - "*.R"
+  - "*.rb"
+  - "*.Rmd"
+  - "*.tiff"
+  - "*.tips"
+  - "*.trees"
+  - "*.tsv"
+  - "*.txt"
+  - "*.xml"
+  - "*.zip"
+  - "Gemfile"
+  - "Gemfile.lock"
+
+readmes:
+
+projects:

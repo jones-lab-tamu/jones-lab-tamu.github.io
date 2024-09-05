@@ -1,0 +1,93 @@
+<!-- code for navbar at the top of the page-->
+<div id="header">
+    <nav class="navbar navbar-expand-md navbar-light bg-light" style="padding: 5px 0;"> <!-- Reducing top and bottom padding -->
+        <div class="container">
+            <!-- Don't need title on the navbar on the home page, there is a big title there-->
+            <a class="navbar-brand" href="/">
+                <img class="logo2 navbar-brand d-inline-block align-center ml-0 mr-1" src="/images/logos/jones-lab-logo.png" alt="B icon">
+                The Jones Lab
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav nav-pills ml-auto">
+                    <!-- Dropdown for Research -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="researchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Research
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="researchDropdown">
+                            <a class="dropdown-item" href="/projects/">Projects</a>
+                            <a class="dropdown-item" href="/approaches/">Approaches</a>
+                        </div>
+                    </li>
+
+                    <!-- Regular navbar items -->
+                    {% if page.categories.first == 'team' %}
+                    <li class="nav-link active">
+                    {% else %}
+                    <li class="nav-link">
+                    {% endif %}
+                    <a class="mx-1" href="/team/">Team</a></li>
+
+                    {% if page.categories.first == 'papers' %}
+                    <li class="nav-link active">
+                    {% else %}
+                    <li class="nav-link">
+                    {% endif %}
+                    <a class="mx-1" href="/papers/">Publications</a></li>
+
+                    {% if page.categories.first == 'blog' %}
+                    <li class="nav-link active">
+                    {% else %}
+                    <li class="nav-link">
+                    {% endif %}
+                    <a class="mx-1" href="/contact/">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- Additional CSS -->
+<style>
+    .logo2 {
+        width: 75px; /* Adjust size as necessary */
+    }
+
+    .navbar-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-left: 10px; /* Slight margin between items */
+        margin-right: 10px;
+    }
+
+    .navbar {
+        min-height: 50px; /* Adjust this value to control overall navbar height */
+    }
+
+    .navbar-collapse {
+        justify-content: flex-end; /* Align items to the right */
+    }
+
+    .dropdown-menu {
+        padding: 10px; /* Adjust padding for dropdown */
+    }
+
+    .dropdown-item {
+        padding: 5px 15px; /* Adjust padding for each dropdown item */
+    }
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa; /* Slight hover effect for dropdown items */
+    }
+</style>
