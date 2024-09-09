@@ -4,7 +4,7 @@ title: Arthur Mayo III
 position: Undergraduate Student
 nickname:
 handle:
-email: Arthurmayo31@tamu.edu
+email: arthurmayo31@tamu.edu
 github:
 scholar:
 image: /images/team/arthur.jpg
