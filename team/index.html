@@ -1,10 +1,3 @@
----
-layout: default
-title:  Jones Lab / team
-categories:
- - team
----
-
 <!-- Inline CSS to handle long member names -->
 <style>
   /* Allow long words to break and hyphenate if necessary */
@@ -56,7 +49,7 @@ categories:
 <div class="bigspacer"></div>
 
 {% for member in site.categories.team reversed %}
-    {% if member.alumni != true %}
+    {% if member.alumni != true and member.position contains "Undergrad" == false %}
     {% cycle 'add rows': '<div class="row">', '', '' %}
         <div class="col-lg-4 memberbox">
             <div class="media">
@@ -78,11 +71,11 @@ categories:
 {% endfor %}
 {% cycle 'close rows': '', '</div>', '</div>' %}
 
-<!-- Past Members Section -->
+<!-- New Undergrad Members Section -->
 <div class="row">
     <div class="col-lg-12">
         <div class="title">
-            Past members
+            Undergraduate Members
         </div>
     </div>
 </div>
@@ -90,7 +83,7 @@ categories:
 <div class="bigspacer"></div>
 
 {% for member in site.categories.team reversed %}
-    {% if member.alumni == true %}
+    {% if member.alumni != true and member.position contains "Undergrad" %}
     {% cycle 'add rows 2': '<div class="row">', '', '' %}
         <div class="col-lg-4 memberbox">
             <div class="media">
@@ -111,3 +104,37 @@ categories:
     {% endif %}
 {% endfor %}
 {% cycle 'close rows 2': '', '</div>', '</div>' %}
+
+<!-- Past Members Section -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="title">
+            Past members
+        </div>
+    </div>
+</div>
+
+<div class="bigspacer"></div>
+
+{% for member in site.categories.team reversed %}
+    {% if member.alumni == true %}
+    {% cycle 'add rows 3': '<div class="row">', '', '' %}
+        <div class="col-lg-4 memberbox">
+            <div class="media">
+                <a class="float-left" href="{{ member.url }}">
+                    <img width="160" class="mr-3" src="{{ member.image }}" alt="{{ member.title }}">
+                </a>
+                <div class="media-body">
+                    <div class="head mb-1">
+                        <a href="{{ member.url }}" class="off">{{ member.title }}</a>
+                    </div>
+                    <p class="note">{{ member.position }}</p>
+                </div>
+            </div>
+            <div class="bigspacer"></div>
+            <div class="bigspacer"></div>
+        </div>
+    {% cycle 'close rows 3': '', '', '</div>' %}
+    {% endif %}
+{% endfor %}
+{% cycle 'close rows 3': '', '</div>', '</div>' %}
