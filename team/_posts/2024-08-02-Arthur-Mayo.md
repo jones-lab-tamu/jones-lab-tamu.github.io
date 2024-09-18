@@ -2,7 +2,7 @@
 layout: member
 title: Arthur Mayo III
 position: Undergraduate Student
-undergrad: true
+nickname: undergrad
 handle:
 email: arthurmayo31@tamu.edu
 github:
