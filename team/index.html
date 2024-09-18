@@ -57,7 +57,7 @@ categories:
 
 {% for member in site.categories.team reversed %}
     {% if member.alumni != true and member.position contains "Undergrad" == false %}
-    <div class="row">
+    {% cycle 'add rows': '<div class="row">', '', '' %}
         <div class="col-lg-4 memberbox">
             <div class="media">
                 <a class="float-left" href="{{ member.url }}">
@@ -73,11 +73,12 @@ categories:
             <div class="bigspacer"></div>
             <div class="bigspacer"></div>
         </div>
-    </div>
+    {% cycle 'close rows': '', '', '</div>' %}
     {% endif %}
 {% endfor %}
+{% cycle 'close rows': '', '</div>', '</div>' %}
 
-<!-- Undergrad Members Section -->
+<!-- New Undergrad Members Section -->
 <div class="row">
     <div class="col-lg-12">
         <div class="title">
@@ -90,7 +91,7 @@ categories:
 
 {% for member in site.categories.team reversed %}
     {% if member.alumni != true and member.position contains "Undergrad" %}
-    <div class="row">
+    {% cycle 'add rows 2': '<div class="row">', '', '' %}
         <div class="col-lg-4 memberbox">
             <div class="media">
                 <a class="float-left" href="{{ member.url }}">
@@ -106,9 +107,10 @@ categories:
             <div class="bigspacer"></div>
             <div class="bigspacer"></div>
         </div>
-    </div>
+    {% cycle 'close rows 2': '', '', '</div>' %}
     {% endif %}
 {% endfor %}
+{% cycle 'close rows 2': '', '</div>', '</div>' %}
 
 <!-- Past Members Section -->
 <div class="row">
@@ -123,7 +125,7 @@ categories:
 
 {% for member in site.categories.team reversed %}
     {% if member.alumni == true %}
-    <div class="row">
+    {% cycle 'add rows 3': '<div class="row">', '', '' %}
         <div class="col-lg-4 memberbox">
             <div class="media">
                 <a class="float-left" href="{{ member.url }}">
@@ -139,6 +141,7 @@ categories:
             <div class="bigspacer"></div>
             <div class="bigspacer"></div>
         </div>
-    </div>
+    {% cycle 'close rows 3': '', '', '</div>' %}
     {% endif %}
 {% endfor %}
+{% cycle 'close rows 3': '', '</div>', '</div>' %}
