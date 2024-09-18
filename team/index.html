@@ -56,78 +56,8 @@ categories:
 <div class="bigspacer"></div>
 
 {% for member in site.categories.team reversed %}
-    {% if member.alumni != true and member.undergrad != true %}
-            {% cycle 'add rows': '<div class="row">', '', '' %}
-            <div class="col-lg-4 memberbox">
-                <div class="media">
-                    <a class="float-left" href="{{ member.url }}">
-                        <img width="160" class="mr-3" src="{{ member.image }}" alt="{{ member.title }}">
-                    </a>
-                    <div class="media-body">
-                        <div class="head mb-1">
-                            <a href="{{ member.url }}" class="off">{{ member.title }}</a>
-                        </div>
-                        <p class="note">{{ member.position }}</p>
-                    </div>
-                </div>
-                <div class="bigspacer"></div>
-                <div class="bigspacer"></div>
-            </div>
-            {% cycle 'close rows': '', '', '</div>' %}
-        {% endif %}
-    {% endif %}
-{% endfor %}
-{% cycle 'close rows': '', '</div>', '</div>' %}
-
-<!-- New Undergrad Members Section -->
-<div class="row">
-    <div class="col-lg-12">
-        <div class="title">
-            Undergraduate Members
-        </div>
-    </div>
-</div>
-
-<div class="bigspacer"></div>
-
-{% for member in site.categories.team reversed %}
-    {% if member.alumni != true and member.undergrad == true %}
-            {% cycle 'add rows 2': '<div class="row">', '', '' %}
-            <div class="col-lg-4 memberbox">
-                <div class="media">
-                    <a class="float-left" href="{{ member.url }}">
-                        <img width="160" class="mr-3" src="{{ member.image }}" alt="{{ member.title }}">
-                    </a>
-                    <div class="media-body">
-                        <div class="head mb-1">
-                            <a href="{{ member.url }}" class="off">{{ member.title }}</a>
-                        </div>
-                        <p class="note">{{ member.position }}</p>
-                    </div>
-                </div>
-                <div class="bigspacer"></div>
-                <div class="bigspacer"></div>
-            </div>
-            {% cycle 'close rows 2': '', '', '</div>' %}
-        {% endif %}
-    {% endif %}
-{% endfor %}
-{% cycle 'close rows 2': '', '</div>', '</div>' %}
-
-<!-- Past Members Section -->
-<div class="row">
-    <div class="col-lg-12">
-        <div class="title">
-            Past members
-        </div>
-    </div>
-</div>
-
-<div class="bigspacer"></div>
-
-{% for member in site.categories.team reversed %}
-    {% if member.alumni == true %}
-        {% cycle 'add rows 3': '<div class="row">', '', '' %}
+    {% if member.alumni != true and member.nickname != "undergrad" %}
+    <div class="row">
         <div class="col-lg-4 memberbox">
             <div class="media">
                 <a class="float-left" href="{{ member.url }}">
@@ -143,7 +73,72 @@ categories:
             <div class="bigspacer"></div>
             <div class="bigspacer"></div>
         </div>
-        {% cycle 'close rows 3': '', '', '</div>' %}
+    </div>
     {% endif %}
 {% endfor %}
-{% cycle 'close rows 3': '', '</div>', '</div>' %}
+
+<!-- Undergrad Members Section -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="title">
+            Undergraduate Members
+        </div>
+    </div>
+</div>
+
+<div class="bigspacer"></div>
+
+{% for member in site.categories.team reversed %}
+    {% if member.alumni != true and member.nickname == "undergrad" %}
+    <div class="row">
+        <div class="col-lg-4 memberbox">
+            <div class="media">
+                <a class="float-left" href="{{ member.url }}">
+                    <img width="160" class="mr-3" src="{{ member.image }}" alt="{{ member.title }}">
+                </a>
+                <div class="media-body">
+                    <div class="head mb-1">
+                        <a href="{{ member.url }}" class="off">{{ member.title }}</a>
+                    </div>
+                    <p class="note">{{ member.position }}</p>
+                </div>
+            </div>
+            <div class="bigspacer"></div>
+            <div class="bigspacer"></div>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+
+<!-- Past Members Section -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="title">
+            Past members
+        </div>
+    </div>
+</div>
+
+<div class="bigspacer"></div>
+
+{% for member in site.categories.team reversed %}
+    {% if member.alumni == true %}
+    <div class="row">
+        <div class="col-lg-4 memberbox">
+            <div class="media">
+                <a class="float-left" href="{{ member.url }}">
+                    <img width="160" class="mr-3" src="{{ member.image }}" alt="{{ member.title }}">
+                </a>
+                <div class="media-body">
+                    <div class="head mb-1">
+                        <a href="{{ member.url }}" class="off">{{ member.title }}</a>
+                    </div>
+                    <p class="note">{{ member.position }}</p>
+                </div>
+            </div>
+            <div class="bigspacer"></div>
+            <div class="bigspacer"></div>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
