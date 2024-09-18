@@ -5,6 +5,45 @@ categories:
  - team
 ---
 
+<!-- Inline CSS to handle long member names -->
+<style>
+  /* Allow long words to break and hyphenate if necessary */
+  .media-body .head a {
+      word-wrap: break-word;       /* Legacy property for word wrapping */
+      overflow-wrap: break-word;   /* Standard property for word wrapping */
+      word-break: break-word;      /* Breaks words at arbitrary points if needed */
+      hyphens: manual;               /* Automatically hyphenates words */
+  }
+
+  /* Optional: Limit the maximum width of the head to prevent excessive stretching */
+  .media-body .head {
+      max-width: 200px; /* Adjust this value based on your layout needs */
+  }
+
+  /* Ensure that the media container aligns items properly */
+  .media {
+      display: flex;
+      align-items: center; /* Vertically centers the content */
+  }
+
+  /* Optional: Add some spacing between the image and the text */
+  .media-body {
+      flex: 1; /* Allows the media body to take up remaining space */
+  }
+
+  /* Responsive adjustments (optional) */
+  @media (max-width: 768px) {
+      .media {
+          flex-direction: column;
+          align-items: flex-start;
+      }
+
+      .media-body .head {
+          max-width: 100%;
+      }
+  }
+</style>
+
 <!-- Current Members Section -->
 <div class="row">
     <div class="col-lg-12">
