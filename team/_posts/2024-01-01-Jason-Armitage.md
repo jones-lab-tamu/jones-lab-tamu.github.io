@@ -9,7 +9,7 @@ github:
 scholar: 
 image: /images/team/Jason.jpg
 cv: 
-alum: true
+alumni: true
 ---
 
 Current position: Engineer at [Tage Labs](https://www.tagelabs.com/).
