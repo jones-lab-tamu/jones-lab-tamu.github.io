@@ -1,6 +1,6 @@
 ---
 layout: member
-title: Nicole Armitage
+title: Nicole Keene
 position: PhD Student
 nickname: Nicole
 handle: Nicole

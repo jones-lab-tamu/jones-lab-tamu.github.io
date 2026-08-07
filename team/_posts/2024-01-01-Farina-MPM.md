@@ -1,6 +1,6 @@
 ---
 layout: member
-title: Farina Mohammad&shy;pourmir
+title: Farina Pourmir
 position: PhD Student
 nickname: Farina
 handle: Farina
