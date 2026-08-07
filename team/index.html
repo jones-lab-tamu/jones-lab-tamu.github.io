@@ -80,7 +80,9 @@ categories:
 
 <!-- Undergrad Members Section. Hidden entirely when no current undergrads:
      an undergrad who has left is an alum and appears under Past members. -->
-{% assign undergrads = site.categories.team | where_exp: "m", "m.alumni != true and m.undergrad == true" %}
+{% comment %} Two chained single-condition filters: GitHub Pages builds with Jekyll 3.x,
+whose where_exp does not support "and" in the expression. {% endcomment %}
+{% assign undergrads = site.categories.team | where_exp: "m", "m.undergrad == true" | where_exp: "m", "m.alumni != true" %}
 {% if undergrads.size > 0 %}
 <div class="row">
     <div class="col-lg-12">
