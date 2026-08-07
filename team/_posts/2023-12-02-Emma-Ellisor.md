@@ -2,8 +2,9 @@
 layout: member
 title: Emma Ellisor
 position: Undergraduate Student
-nickname: undergrad
-handle:
+nickname: Emma
+handle: Emma
+undergrad: true
 email: emmalellisor@tamu.edu
 github:
 scholar:

@@ -5,6 +5,7 @@ year: "2021"
 shortref: "Myung <i>et al.</i>, Front Neurosci (2021)"
 journal: "Frontiers in Neuroscience"
 authors: "Myung J, Nakamura TJ, Jones JR, Silver R, Ono D"
+lab: [Jeff]
 image: /images/papers/2021_frontiers.png
 fulltext: https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2021.735007/full
 pdflink: 

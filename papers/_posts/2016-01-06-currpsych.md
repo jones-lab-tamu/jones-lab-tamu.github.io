@@ -5,6 +5,7 @@ year: "2016"
 shortref: "Li <i>et al.</i>, Curr Psych Rep (2016)"
 journal: "Current Psychology Reports"
 authors: "Li S, Jones JR, de Lecea L"
+lab: [Jeff]
 image: /images/papers/2016_currpsych.png
 fulltext: https://link.springer.com/article/10.1007/s11920-015-0639-0
 pdflink: 

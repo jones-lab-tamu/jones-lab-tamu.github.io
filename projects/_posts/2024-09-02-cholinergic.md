@@ -1,7 +1,7 @@
 ---
 layout: research
 title: "Cholinergic feedback loop reinforcement of circadian rhythms" 
-author: "Mohammad&shy;pourmir F"
+lab: [Farina, Jeff]
 image: /images/misc/cholinergic.png
 tag: cholinergic
 ---

@@ -31,22 +31,18 @@ layout: default
             <div class="head">Team Members Working on This Project</div>
             <div class="spacer"></div>
             <ul>
-                {% assign research_authors = page.author | split: ", " %}
-                {% for member in site.categories.team %}
-                    {% assign member_name = member.title %}
-                    {% assign member_lastname = member_name | split: ' ' | last %}
-                    {% assign member_firstinitial = member_name | split: ' ' | first | slice: 0 %}
-                    {% assign member_shortname = member_lastname | append: " " | append: member_firstinitial %}
-
-                    <!-- Check if member's last name + first initial matches one of the research authors -->
-                    {% if research_authors contains member_shortname %}
+                <!-- Members come from this project's `lab:` field, in the order listed there. -->
+                {% for handle in page.lab %}
+                    {% for member in site.categories.team %}
+                        {% if member.handle == handle %}
                         <li>
                             <a href="{{ member.url }}">
                                 <img src="{{ member.image }}" width="50" alt="{{ member.title }}">
                                 {{ member.title }} - {{ member.position }}
                             </a>
                         </li>
-                    {% endif %}
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
             </ul>
 

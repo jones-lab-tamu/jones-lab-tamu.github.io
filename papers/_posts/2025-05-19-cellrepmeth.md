@@ -5,6 +5,7 @@ year: "2025"
 shortref: "Perry <i>et al.</i>, Cell Rep Methods (2025)"
 journal: "Cell Rep Methods"
 authors: "Perry LJ, Ratcliff GE, Mayo A, Perez BE, Rays Wahba L, Nikhil KL, Lenzen WC, Li Y, Mar J, Farhy-Tselnicker I, Li W, Jones JR"
+lab: [Logan, Arthur, Blanca, Jeff]
 image: /images/papers/2024_biorxiv.jpg
 fulltext: https://www.sciencedirect.com/science/article/pii/S2667237525000864
 pdflink: 

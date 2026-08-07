@@ -116,44 +116,26 @@ layout: default
 			{{ content }}
 		</div>
 
-<!-- 		{% assign lastname = member.title | split: ' ' | last %}
-		{% assign firstinitial = member.title | split: ' ' | first | slice: 0 %}
-		{% assign searchstring = lastname | append: ' ' | append: firstinitial %} -->
+		<!-- Papers and projects are linked by handle: a paper or project lists
+		     member handles in its `lab:` field. See team/_posts for handles. -->
 
-		{% assign lastname = member.title | split: ' ' | last %}
-		{% assign searchstring = lastname %}
-
-		{% for paper in site.categories.papers %}
-		{% if paper.authors contains searchstring %}
-		{% assign papersq = true %}
-		{% endif %}
-		{% endfor %}
-		
-		{% if papersq == true %}
+		{% assign member_papers = site.categories.papers | where_exp: "paper", "paper.lab contains member.handle" %}
+		{% if member_papers.size > 0 %}
 		<div class="bigspacer"></div>
 		<div class="head">Papers</div>
 		<div class="spacer"></div>
-		{% for paper in site.categories.papers %}
-		{% if paper.authors contains searchstring %}
-		<p><a href="{{ paper.url }}" class="off">{{ paper.title }}</a>
-		{% endif %}
+		{% for paper in member_papers %}
+		<p><a href="{{ paper.url }}" class="off">{{ paper.title }}</a></p>
 		{% endfor %}
 		{% endif %}
-		
-		{% for research in site.categories.research %}
-		{% if research.author contains searchstring %}
-		{% assign researchsq = true %}
-		{% endif %}
-		{% endfor %}
-		
-		{% if researchsq == true %}
+
+		{% assign member_projects = site.categories.projects | where_exp: "project", "project.lab contains member.handle" %}
+		{% if member_projects.size > 0 %}
 		<div class="bigspacer"></div>
 		<div class="head">Research Projects</div>
 		<div class="spacer"></div>
-		{% for research in site.categories.research %}
-		{% if research.author contains searchstring %}
-		<p><a href="{{ research.url }}" class="off">{{ research.title }}</a>
-		{% endif %}
+		{% for project in member_projects %}
+		<p><a href="{{ project.url }}" class="off">{{ project.title }}</a></p>
 		{% endfor %}
 		{% endif %}
 

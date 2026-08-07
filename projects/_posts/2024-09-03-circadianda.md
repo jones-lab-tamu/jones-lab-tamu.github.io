@@ -1,7 +1,7 @@
 ---
 layout: research
 title: "Circadian modulation of dopamine release in the mesolimbic pathway" 
-author: "Cook J"
+lab: [Jordan, Jeff]
 image: /images/misc/circadianda.png
 tag: circadianda
 ---
