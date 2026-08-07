@@ -15,13 +15,6 @@ future: true
 sass:
   sass_dir: scss
 
-plugins:
-  - jekyll-gzip
-  - jekyll-twitter-plugin
-
-gzip:
-  replace_files: true
-
 exclude:
   - "*.branches"
   - "*.class"
@@ -53,6 +46,10 @@ exclude:
   - "*.zip"
   - "Gemfile"
   - "Gemfile.lock"
+  # This explicit list overrides Jekyll's defaults, which would otherwise
+  # exclude the project-local gem install. Keep these.
+  - "vendor"
+  - ".bundle"
 
 readmes:
 
