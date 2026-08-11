@@ -17,7 +17,7 @@ category: paper
 preprint: true
 peerreview: true
 review: false
-tags: scndmh
+tags: output-pathways
 techs: opto tracing behavior crispr
 ---
 

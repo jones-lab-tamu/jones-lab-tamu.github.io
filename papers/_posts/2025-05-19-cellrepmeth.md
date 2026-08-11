@@ -17,7 +17,7 @@ category: paper
 preprint: false
 peerreview: true
 review: true
-tags: cbas
+tags: behavioral-organization
 techs: machinelearning 3dprint
 ---
 

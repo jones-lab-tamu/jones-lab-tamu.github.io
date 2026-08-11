@@ -17,7 +17,7 @@ category: paper
 preprint: true
 peerreview: true
 review: false
-tags: circadianda
+tags: [circuit-state, behavioral-organization]
 techs: behavior photometry crispr 3dprint
 ---
 

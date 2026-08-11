@@ -151,19 +151,43 @@ on its own.
 ```yaml
 ---
 layout: research
-title: "The project title" 
-lab: [Nicole, Vanessa, Danny, Jeff]
+title: "Output pathways"
+question: "How does an SCN output pathway shape behavioral timing?"
+learn_more: "Learn more about SCN → DMH circuitry"
+lab: [Nicole, Farina, Danny, Jeff]
 image: /images/misc/scndmh.png
-tag: scndmh
+tag: output-pathways
 ---
 
-A paragraph describing the project. Shows on the project page and the projects index.
+A paragraph or three describing the project. Shows on the project page and on the
+projects index.
 ```
 
+- **`title`** — the short theme name. This is also what appears on member pages.
+- **`question`** — the italicised question under the title. Optional.
+- **`learn_more`** — text for the link from the projects index to this project's own
+  page, where its team members and publications are listed. Optional.
 - **`lab`** — members are listed on the project page in exactly this order.
-- **`tag`** — a short unique keyword. Any paper with a matching `tags:` value shows up
-  under Publications on this project's page. If no paper matches, that section reads
-  "Coming soon!".
+- **`tag`** — a short unique keyword, **no spaces** (use hyphens). Any paper with a
+  matching value in its `tags:` shows up under Publications on this project's page.
+  If no paper matches, that section reads "Coming soon!".
+- **The date in the filename sets the order on the projects page** — newest first. To
+  reorder the themes, change the dates.
+
+A paper can belong to more than one project. Use a YAML list in the paper's front
+matter:
+
+```yaml
+tags: [circuit-state, pacemaker-dynamics]
+```
+
+This is why project tags must not contain spaces: Jekyll treats `tags:` as a list and
+splits a bare string on whitespace, so `tags: circuit state` would mean two separate
+tags named `circuit` and `state`.
+
+The intro paragraph and the "Where this is going" section at the bottom of the projects
+page are page-level prose, not projects. They live in `projects/index.html` between the
+clearly marked `INTRO PROSE` and `CLOSING PROSE` comments.
 
 ---
 

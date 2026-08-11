@@ -13,7 +13,11 @@ layout: default
                 <div class="media-body">
                     <div class="title media-heading">
                         <a href="{{ page.url }}" class="off">{{ page.title }}</a>
-                    </div><br/>
+                    </div>
+                    {% if page.question %}
+                    <div class="smallhead">{{ page.question }}</div>
+                    {% endif %}
+                    <br/>
                     <div class="post">
                         {{content }}
                     </div>    

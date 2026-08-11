@@ -1,11 +1,10 @@
 ---
 layout: default
 title: Jones Lab / projects
-categories: 
+categories:
  - projects
 category: projects
 ---
-<!-- borrowed with slight modifications from Premal Shah (https://github.com/shahpr/shahlab/tree/master)-->
 
 <div class="container">
     <div class="row">
@@ -18,21 +17,50 @@ category: projects
 
     <div class="bigspacer"></div>
 
+    <!-- ==== INTRO PROSE - edit freely, this is not tied to any project ==== -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="post">
+                <p>Our lab studies how circadian timing is transformed across multiple levels of
+                neural organization. We focus on four connected questions: how defined output
+                pathways shape behavioral timing, how the central pacemaker differs across species,
+                how multiple behavioral rhythms are organized across the day, and how circadian time
+                changes the state and function of downstream neural circuits.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ==== END INTRO PROSE ==== -->
+
+    <div class="bigspacer"></div>
+
 <div class="post-list">
 
-{% for post in site.categories.projects limit: 8 %}
+<!-- One block per file in projects/_posts/. Order on this page is newest-dated first,
+     so the post date controls the sequence. Team members and publications are attached
+     per project via its `lab:` and `tag:` fields and appear on the project's own page. -->
+{% for post in site.categories.projects %}
 
 <div class="blog-post">
     <div class="row">
-        <div class="col-lg-12"> <!-- Change this to align with "Projects" -->
+        <div class="col-lg-12">
             <div class="media d-flex align-items-center">
                 <div class="media-body">
                     <div class="title media-heading">
                         <a href="{{ post.url }}" class="off">{{ post.title }}</a>
                     </div>
+                    {% if post.question %}
+                    <div class="smallhead">{{ post.question }}</div>
+                    <div class="spacer"></div>
+                    {% endif %}
                     <div class="post">
                         {{ post.content }}
-                    </div>    
+                    </div>
+                    {% if post.learn_more %}
+                    <p class="note">
+                        <i class="fa fa-arrow-circle-right fa-fw"></i>
+                        <a class="off" href="{{ post.url }}">{{ post.learn_more }}</a>
+                    </p>
+                    {% endif %}
                 </div>
 
                 {% if post.image %}
@@ -45,24 +73,50 @@ category: projects
     </div>
 
     <div class="bigspacer"></div>
-    <div class="spacer"></div>    
+    <div class="spacer"></div>
 </div>
-
 
 {% endfor %}
 
 </div>
 
-<div class="infinite-spinner"></div>
+    <!-- ==== CLOSING PROSE - edit freely, this is not tied to any project ==== -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="title">
+                Where this is going
+            </div>
+            <div class="spacer"></div>
+            <div class="post">
+                <p>These four areas are closely connected. Our next goal is to understand how they
+                interact: how differences in pacemaker dynamics are transformed by downstream
+                pathways, how interacting output circuits generate and amplify biological rhythms,
+                and how this organization breaks down in disease.</p>
 
-<div class="row">
-	<div class="col-md-12">
-		<div id="scroll" class="centered-pills">
-			<ul class="nav nav-pills note">
-				<li role="presentation">
-					<a class="off" href="/research/">
-						<i class="fa fa-chevron-up fa-fw"></i> Back to top
-					</a>
-				</li>				
-			</ul>
-		</
+                <p>Current and developing directions include comparative SCN-output circuitry, local
+                molecular clocks in neuromodulatory systems, hormonal and neurotransmitter feedback,
+                and the loss of circadian organization in disorders affecting cognition, reward, and
+                behavior.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ==== END CLOSING PROSE ==== -->
+
+    <div class="bigspacer"></div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="scroll" class="centered-pills">
+                <ul class="nav nav-pills note">
+                    <li role="presentation">
+                        <a class="off" href="#header">
+                            <i class="fa fa-chevron-up fa-fw"></i> Back to top
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bigspacer"></div>
+</div>

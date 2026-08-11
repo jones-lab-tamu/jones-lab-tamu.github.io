@@ -17,7 +17,7 @@ category: paper
 preprint: false
 peerreview: true
 review: true
-tags: other
+tags: [circuit-state, pacemaker-dynamics]
 techs:
 ---
 

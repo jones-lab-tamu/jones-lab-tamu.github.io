@@ -17,7 +17,7 @@ category: paper
 preprint: false
 peerreview: true
 review: true
-tags: circadianda
+tags: [circuit-state, pacemaker-dynamics]
 techs: photometry
 ---
 

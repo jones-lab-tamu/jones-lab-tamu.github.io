@@ -17,7 +17,7 @@ category: paper
 preprint: true
 peerreview: true
 review: false
-tags: other
+tags:
 techs: opto
 ---
 
