@@ -46,13 +46,19 @@ JPG, PNG, or GIF.
 
 - The date is the publication date. It sets the ordering — newest first.
 - The shortname becomes the URL: `2026-08-21-iscience.md` becomes
-  `jones-lab.org/papers/iscience/`. Lowercase, no spaces.
+  `jones-lab.org/papers/paper/iscience/`. Lowercase, no spaces.
+- **The shortname must be unique across every file in `papers/_posts/`.** Two files
+  sharing a shortname silently collapse into one page — the second overwrites the first
+  and a paper disappears from the site with no error anywhere. Journal names collide
+  easily, so for a second paper in the same venue, add the first author:
+  `2026-05-22-biorxiv-keene.md` and `2026-05-04-biorxiv-purvines.md`.
 
 **3. Paste this in and fill it out:**
 
 ```yaml
 ---
 layout: paper
+category: paper
 title: "Circadian pacemaker dynamics differ between diurnal and nocturnal mammals"
 year: "2026"
 shortref: "Muhl <i>et al.</i>, iScience (2026)"
@@ -73,6 +79,7 @@ tags:
 | Field | Notes |
 |---|---|
 | `lab` | **The one that matters.** Handles of lab members on the paper. Order doesn't matter. |
+| `category` | Always `paper`. No template reads it, but it shapes the URL (`/papers/paper/...`). Leave it out and this paper's link won't match every other one. |
 | `authors` | The citation string shown on the paper page, verbatim. Cosmetic only — it does not affect linking. Non-lab coauthors go here and nowhere else. |
 | `year` | Keep the quotes. After 2021 lands in the main grid; 2021 and earlier go under "Previous papers". |
 | `shortref` | The small line under the thumbnail. `<i>et al.</i>` gives the italics. |
