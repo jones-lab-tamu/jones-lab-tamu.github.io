@@ -442,31 +442,39 @@ blockquote {
 }
 
 .project-media .media-body {
-	min-width: 300px;
+	min-width: 340px;
 }
 
-/* Figure on the projects index */
+/* Figure beside a project's text. THIS IS THE ONE NUMBER TO CHANGE to resize
+   every project figure, on both the projects page and each project page. */
+$project-figure-width: 30%;
+
 .project-figure {
-	flex: 0 0 42%;
-	max-width: 42%;
+	flex: 0 0 $project-figure-width;
+	max-width: $project-figure-width;
 }
 
-/* Larger figure on an individual project page */
-.project-figure-large {
-	flex: 0 0 55%;
-	max-width: 55%;
+/* An individual project page lays its content out in a col-md-10 - ten twelfths
+   of the container - so the same percentage would render a visibly smaller
+   figure there. Scaling by 12/10 cancels that out, giving an identical figure
+   width on both pages at every viewport size. Derived from the value above, so
+   there is still only one number to edit. */
+.project-page .project-figure {
+	flex: 0 0 $project-figure-width * 1.2;
+	max-width: $project-figure-width * 1.2;
 }
 
-.project-figure img,
-.project-figure-large img {
+.project-figure img {
 	width: 100%;
 	height: auto;
 }
 
-/* Stack the figure under the text on narrow screens */
+/* Stack the figure under the text on narrow screens. The .project-page selector
+   must be repeated here: it is more specific than a bare .project-figure, so it
+   would otherwise win over this rule even inside the media query. */
 @media (max-width: 767px) {
 	.project-figure,
-	.project-figure-large {
+	.project-page .project-figure {
 		flex: 0 0 100%;
 		max-width: 100%;
 		margin-left: 0 !important;

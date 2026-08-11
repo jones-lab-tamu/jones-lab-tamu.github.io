@@ -166,8 +166,10 @@ projects index.
   the projects page it is the link through to this project (underlined to show that).
 - **`question`** — the smaller question shown under the title. Optional.
 - **`image`** — shown beside the text. Any aspect ratio works; the figure is sized as a
-  percentage of the row, so wide images are fine. To make every project figure bigger or
-  smaller, change `.project-figure` / `.project-figure-large` in `scss/custom.scss`.
+  percentage of the row, so wide images are fine. To resize every project figure, change
+  the one `.project-figure` rule in `scss/custom.scss` (currently 30%). Crop white
+  margins out of the file first — blank space inside the image makes the artwork look
+  smaller than the space it occupies, and no CSS setting can compensate for that.
 - **`lab`** — members are listed on the project page in exactly this order.
 - **`tag`** — a short unique keyword, **no spaces** (use hyphens). Any paper with a
   matching value in its `tags:` shows up under Publications on this project's page.
