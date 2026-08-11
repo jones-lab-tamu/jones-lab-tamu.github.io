@@ -86,6 +86,7 @@ tags:
 | `image` | Path from the site root, with the leading slash. |
 | `fulltext`, `pdflink`, `pmid`, `doi`, `dryad_doi` | All optional. Leave blank rather than deleting — blank ones are skipped automatically. |
 | `tags` | Optional. One project tag to also show this paper on that project's page: `other`, `cholinergic`, `circadianda`, `cbas`, `scndmh`. |
+| `techs` | Optional. Space-separated approach keys, e.g. `opto tracing behavior`. Works both ways — the paper appears under those approaches on the Approaches page, and those approaches are listed on the paper's own page. Keys are defined in `_data/approaches.yml`. |
 
 Occasionally useful: `preprint: true` adds a "PREPRINT (not yet peer-reviewed)" banner,
 `supplement: /pdfs/...` adds a supplement link, `skip: true` hides it from the papers index.
@@ -165,6 +166,30 @@ A paragraph describing the project. Shows on the project page and the projects i
   "Coming soon!".
 
 ---
+
+## Adding or renaming an approach
+
+The Approaches page is generated entirely from `_data/approaches.yml`. Don't edit
+`approaches/index.html` — add an entry to the data file and drop the image in
+`images/misc/`:
+
+```yaml
+- key: ephys
+  name: Electrophysiology
+  detail: patch clamp, multielectrode array
+  image: /images/misc/ephys.png
+  alt: Electrophysiology
+```
+
+- **`key`** is what papers put in their `techs:` field. Short, lowercase, no spaces.
+  Changing a key later means updating every paper that uses it.
+- **`name`** is the heading, and is also what shows on each paper's page.
+- The order of entries here is the order of sections on the page, and the order the
+  approaches are listed on a paper.
+
+Because the page and the paper listings read the same file, they can't drift apart.
+A `techs:` value with no matching `key` simply shows nothing — no error — so check
+your spelling against the data file.
 
 ## Running the site locally (optional)
 

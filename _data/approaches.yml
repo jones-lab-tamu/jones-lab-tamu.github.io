@@ -1,0 +1,62 @@
+# The lab's experimental approaches, in the order they appear on /approaches/.
+#
+# `key` is what papers put in their `techs:` field (space-separated). It is the
+# only link between a paper and an approach, and it works in both directions:
+# the approach lists its papers, and each paper lists its approaches.
+#
+# To add an approach: add an entry here and drop its image in images/misc/.
+# Nothing else needs editing.
+
+- key: behavior
+  name: Circadian behavioral analysis
+  detail: wheel running, infrared tracking, feeding
+  image: /images/misc/behavior.png
+  alt: Circadian behavior
+
+- key: opto
+  name: Neuromodulation
+  detail: in vivo, in vitro optogenetics, chemogenetics
+  image: /images/misc/opto.png
+  alt: Neuromodulation
+
+- key: photometry
+  name: In vivo imaging
+  detail: fiber photometry recording of calcium and clock genes
+  image: /images/misc/photometry.png
+  alt: In vivo imaging
+
+- key: liveslice
+  name: In vitro imaging
+  detail: time-lapse recording of calcium and clock genes
+  image: /images/misc/liveslice.png
+  alt: In vitro imaging
+
+- key: crispr
+  name: Neurogenetics
+  detail: CRISPR/Cas9 editing of clock genes and receptors
+  image: /images/misc/crispr.png
+  alt: Neurogenetics
+
+- key: tracing
+  name: Neuroanatomy
+  detail: circuit tracing, IHC, confocal imaging
+  image: /images/misc/tracing.png
+  alt: Neuroanatomy
+
+- key: hormones
+  name: Manipulation and measurement of hormones
+  detail: ELISA, drug delivery, gonadectomy
+  image: /images/misc/hormones.png
+  alt: Manipulation and measurement of hormones
+
+- key: machinelearning
+  name: Complex behavioral analysis
+  detail: video tracking, machine learning
+  image: /images/misc/machinelearning.png
+  alt: Complex behavioral analysis
+
+- key: "3dprint"
+  name: Open-source tool development
+  detail: 3D printing, laser cutting, electronics
+  image: /images/misc/3dprint.png
+  alt: Tool development

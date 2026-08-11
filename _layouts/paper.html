@@ -133,9 +133,29 @@ layout: default
 			{% endif %}
 			<div class="bigspacer"></div>			
 			{% endif %}
+
+			<!-- Approaches this paper used. Driven by the paper's `techs:` field and
+			     _data/approaches.yml - the same pair that builds the /approaches/ page,
+			     so the two directions can never disagree. -->
+			{% assign paper_techs = page.techs | split: " " %}
+			{% assign paper_approaches = site.data.approaches | where_exp: "a", "paper_techs contains a.key" %}
+			{% if paper_approaches.size > 0 %}
+			<div class="smallhead subtle">
+				Approaches
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				{% for approach in paper_approaches %}
+				<i class="fa fa-flask fa-fw"></i>
+				<a class="off" href="/approaches/#{{ approach.key }}">{{ approach.name }}</a>
+				<br/>
+				{% endfor %}
+			</div>
+			<div class="bigspacer"></div>
+			{% endif %}
 		</div>
 	</div>
-	<div class="col-md-8">	
+	<div class="col-md-8">
 		<div class="post">
 			{{ content }}
 		</div>	
