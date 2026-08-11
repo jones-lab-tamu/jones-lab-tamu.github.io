@@ -433,3 +433,56 @@ blockquote {
 	color: #555;
 }
 
+/* ---- Projects: theme figures and clickable headings ------------------------
+   Used by projects/index.html and _layouts/research.html. To resize the
+   figures, change the flex-basis / max-width percentages below. */
+
+.project-media {
+	flex-wrap: wrap;
+}
+
+.project-media .media-body {
+	min-width: 300px;
+}
+
+/* Figure on the projects index */
+.project-figure {
+	flex: 0 0 42%;
+	max-width: 42%;
+}
+
+/* Larger figure on an individual project page */
+.project-figure-large {
+	flex: 0 0 55%;
+	max-width: 55%;
+}
+
+.project-figure img,
+.project-figure-large img {
+	width: 100%;
+	height: auto;
+}
+
+/* Stack the figure under the text on narrow screens */
+@media (max-width: 767px) {
+	.project-figure,
+	.project-figure-large {
+		flex: 0 0 100%;
+		max-width: 100%;
+		margin-left: 0 !important;
+		margin-top: 20px;
+	}
+}
+
+/* The theme heading is the link into the project, so give it a visible
+   affordance. Keeps the dark heading colour rather than the pale default
+   link colour, which is unreadable at this size. */
+.project-title a.off {
+	border-bottom: 2px solid rgba(0, 0, 0, 0.18);
+}
+
+.project-title a.off:hover {
+	border-bottom-color: rgba(0, 0, 0, 0.55);
+	text-decoration: none;
+}
+

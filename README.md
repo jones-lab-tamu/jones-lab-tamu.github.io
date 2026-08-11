@@ -153,7 +153,6 @@ on its own.
 layout: research
 title: "Output pathways"
 question: "How does an SCN output pathway shape behavioral timing?"
-learn_more: "Learn more about SCN → DMH circuitry"
 lab: [Nicole, Farina, Danny, Jeff]
 image: /images/misc/scndmh.png
 tag: output-pathways
@@ -163,10 +162,12 @@ A paragraph or three describing the project. Shows on the project page and on th
 projects index.
 ```
 
-- **`title`** — the short theme name. This is also what appears on member pages.
-- **`question`** — the italicised question under the title. Optional.
-- **`learn_more`** — text for the link from the projects index to this project's own
-  page, where its team members and publications are listed. Optional.
+- **`title`** — the short theme name. This is also what appears on member pages, and on
+  the projects page it is the link through to this project (underlined to show that).
+- **`question`** — the smaller question shown under the title. Optional.
+- **`image`** — shown beside the text. Any aspect ratio works; the figure is sized as a
+  percentage of the row, so wide images are fine. To make every project figure bigger or
+  smaller, change `.project-figure` / `.project-figure-large` in `scss/custom.scss`.
 - **`lab`** — members are listed on the project page in exactly this order.
 - **`tag`** — a short unique keyword, **no spaces** (use hyphens). Any paper with a
   matching value in its `tags:` shows up under Publications on this project's page.

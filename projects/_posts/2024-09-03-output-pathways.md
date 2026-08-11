@@ -2,7 +2,6 @@
 layout: research
 title: "Output pathways"
 question: "How does an SCN output pathway shape behavioral timing?"
-learn_more: "Learn more about SCN → DMH circuitry"
 lab: [Nicole, Farina, Danny, Jeff]
 image: /images/misc/output_pathways.png
 tag: output-pathways

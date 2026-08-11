@@ -43,29 +43,26 @@ category: projects
 <div class="blog-post">
     <div class="row">
         <div class="col-lg-12">
-            <div class="media d-flex align-items-center">
+            <div class="media d-flex align-items-center project-media">
                 <div class="media-body">
-                    <div class="title media-heading">
+                    <!-- The heading is the link into the project page. Styled with a
+                         visible underline in custom.scss so it reads as clickable. -->
+                    <div class="title media-heading project-title">
                         <a href="{{ post.url }}" class="off">{{ post.title }}</a>
                     </div>
                     {% if post.question %}
-                    <div class="smallhead">{{ post.question }}</div>
                     <div class="spacer"></div>
+                    <div class="smallhead">{{ post.question }}</div>
                     {% endif %}
+                    <div class="spacer"></div>
                     <div class="post">
                         {{ post.content }}
                     </div>
-                    {% if post.learn_more %}
-                    <p class="note">
-                        <i class="fa fa-arrow-circle-right fa-fw"></i>
-                        <a class="off" href="{{ post.url }}">{{ post.learn_more }}</a>
-                    </p>
-                    {% endif %}
                 </div>
 
                 {% if post.image %}
-                <a href="{{ post.url }}">
-                    <img width=200 class="ml-3" src="{{ post.image }}" alt="{{ post.title }}">
+                <a href="{{ post.url }}" class="ml-3 project-figure">
+                    <img src="{{ post.image }}" alt="{{ post.title }}">
                 </a>
                 {% endif %}
             </div>

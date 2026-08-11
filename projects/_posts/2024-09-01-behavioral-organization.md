@@ -2,7 +2,6 @@
 layout: research
 title: "Behavioral organization"
 question: "How are multiple behavioral rhythms organized across the day?"
-learn_more: "Learn more about circadian behavioral analysis"
 lab: [Jordan, Sam, Farina, Jeff]
 image: /images/misc/behavioral_organization.png
 tag: behavioral-organization

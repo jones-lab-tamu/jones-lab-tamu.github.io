@@ -2,7 +2,6 @@
 layout: research
 title: "Circuit state"
 question: "How does circadian time reorganize neural signaling and behavior?"
-learn_more: "Learn more about long-term neural recordings and dopamine"
 lab: [Jordan, Sam, Farina, Jeff]
 image: /images/misc/circuit_state.png
 tag: circuit-state

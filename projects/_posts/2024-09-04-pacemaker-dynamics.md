@@ -2,7 +2,6 @@
 layout: research
 title: "Pacemaker dynamics"
 question: "Is the SCN equivalent across temporal niches?"
-learn_more: "Learn more about comparative circadian biology"
 lab: [Vanessa, Danny, Jeff]
 image: /images/misc/pacemaker_dynamics.png
 tag: pacemaker-dynamics
