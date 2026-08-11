@@ -21,7 +21,10 @@ category: approaches
     {% for approach in site.data.approaches %}
     <div class="row align-items-center" id="{{ approach.key }}">
         <div class="col-lg-3">
-            <img src="{{ approach.image }}" alt="{{ approach.alt }}" width="75%" height="auto" class="img-responsive">
+            <!-- Real pixel dimensions here let the browser reserve space before the
+                 image loads. Display size comes from .approach-img below. Without
+                 this the page grows as images arrive and #key links land too high. -->
+            <img src="{{ approach.image }}" alt="{{ approach.alt }}"{% if approach.width %} width="{{ approach.width }}" height="{{ approach.height }}"{% endif %} class="img-responsive approach-img">
         </div>
         <div class="col-lg-9">
             <h3>{{ approach.name }}</h3>
@@ -59,7 +62,28 @@ category: approaches
         max-width: 100%;
         height: auto;
     }
+    .approach-img {
+        width: 75%;
+        height: auto;
+    }
+    /* Leave a little breathing room above a section jumped to via #key. */
+    .row[id] {
+        scroll-margin-top: 1rem;
+    }
     .align-items-center {
         align-items: center; /* Align image and content vertically in the row */
     }
 </style>
+
+<script>
+    // A link like /approaches/#tracing is handled by the browser while images are
+    // still loading. Anything that changes page height afterwards leaves the target
+    // in the wrong place, so re-apply the jump once loading has finished.
+    // getElementById (not querySelector) because "3dprint" starts with a digit and
+    // is a valid HTML id but an invalid CSS selector.
+    window.addEventListener('load', function () {
+        if (!window.location.hash) return;
+        var target = document.getElementById(window.location.hash.slice(1));
+        if (target) target.scrollIntoView();
+    });
+</script>

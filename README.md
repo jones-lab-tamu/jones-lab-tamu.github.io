@@ -179,6 +179,8 @@ The Approaches page is generated entirely from `_data/approaches.yml`. Don't edi
   detail: patch clamp, multielectrode array
   image: /images/misc/ephys.png
   alt: Electrophysiology
+  width: 230
+  height: 230
 ```
 
 - **`key`** is what papers put in their `techs:` field. Short, lowercase, no spaces.
@@ -186,6 +188,10 @@ The Approaches page is generated entirely from `_data/approaches.yml`. Don't edi
 - **`name`** is the heading, and is also what shows on each paper's page.
 - The order of entries here is the order of sections on the page, and the order the
   approaches are listed on a paper.
+- **`width`/`height`** are the image's real pixel size (right-click the file >
+  Properties). They don't set the display size — CSS does — they just let the browser
+  reserve space before the image loads, so that links to `/approaches/#key` land on the
+  right section instead of drifting as images arrive. Safe to omit, but include them.
 
 Because the page and the paper listings read the same file, they can't drift apart.
 A `techs:` value with no matching `key` simply shows nothing — no error — so check
