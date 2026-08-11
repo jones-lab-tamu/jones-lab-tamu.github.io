@@ -9,31 +9,80 @@ Everything below is plain text files. You never need to touch HTML.
 After any change: `git add .`, `git commit -m "..."`, `git push origin main`. The site
 rebuilds itself and is live in a minute or two.
 
-## How people get linked to papers and projects
+## How everything is wired together
 
-Every lab member has a **handle** — a short unique nickname set by the `handle:` line in
-their file in `team/_posts/`. Papers and projects list the handles of the lab members
-involved in a `lab:` field. That is the only thing that connects a person to their work.
+The whole site is cross-linked with three short ID lists. Nothing else connects a person,
+a paper, a project, or an approach — so these are the only values that work.
 
-Current handles:
+**Every one of them fails silently on a typo.** `lab: [Vanesa]` or `tags: circuitstate`
+produces no error, no warning, nothing in the build log. The paper simply doesn't appear
+where you expected. If something is missing after a deploy, check the spelling here first.
+
+| Field | Goes in | Valid values are the |
+|---|---|---|
+| `lab:` | a paper or project | **member handles** below |
+| `tags:` | a paper | **project tags** below |
+| `techs:` | a paper | **approach keys** below |
+
+### Member handles — for `lab:`
+
+Set by the `handle:` line in each file in `team/_posts/`.
 
 | Handle | Person | | Handle | Person |
 |---|---|---|---|---|
-| `Jeff` | Jeff Jones | | `Logan` | Logan Perry |
-| `Jordan` | Jordan Cook | | `Blanca` | Blanca Perez |
-| `Nicole` | Nicole Keene | | `Ashley` | Ashley Starnes |
-| `Vanessa` | Vanessa Muhl | | `Emma` | Emma Ellisor |
-| `Farina` | Farina Pourmir | | `Jason` | Jason Armitage |
-| `Sam` | Sam Sweck | | `Arthur` | Arthur Mayo III |
+| `Jeff` | Jeff Jones | | `Logan` | Logan Perry *(alum)* |
+| `Jordan` | Jordan Cook | | `Blanca` | Blanca Perez *(alum)* |
+| `Nicole` | Nicole Keene | | `Ashley` | Ashley Starnes *(alum)* |
+| `Vanessa` | Vanessa Muhl | | `Emma` | Emma Ellisor *(alum)* |
+| `Farina` | Farina Pourmir | | `Jason` | Jason Armitage *(alum)* |
+| `Sam` | Sam Sweck | | `Arthur` | Arthur Mayo III *(alum)* |
 | `Danny` | Daniela López Lorenzo | | | |
 
-If that table goes stale, the real list is always the `handle:` lines in `team/_posts/`.
-
-**A handle typo fails silently.** `lab: [Vanesa]` won't produce an error — the paper just
-won't appear on her page. If someone is missing after a deploy, check the spelling first.
+Alumni handles stay valid — keep them in the `lab:` list of papers they authored.
 
 Because links use the handle and not the person's name, **renaming someone breaks
 nothing**. Change the `title:` in their team file and everything keeps working.
+
+### Project tags — for a paper's `tags:`
+
+Set by the `tag:` line in each file in `projects/_posts/`.
+
+| Tag | Project |
+|---|---|
+| `pacemaker-dynamics` | Pacemaker dynamics |
+| `output-pathways` | Output pathways |
+| `circuit-state` | Circuit state |
+| `behavioral-organization` | Behavioral organization |
+
+A paper can belong to more than one. Use a YAML list: `tags: [circuit-state, pacemaker-dynamics]`.
+
+### Approach keys — for a paper's `techs:`
+
+Set by the `key:` lines in `_data/approaches.yml`.
+
+| Key | Approach |
+|---|---|
+| `behavior` | Circadian behavioral analysis |
+| `opto` | Neuromodulation |
+| `photometry` | In vivo imaging |
+| `liveslice` | In vitro imaging |
+| `crispr` | Neurogenetics |
+| `tracing` | Neuroanatomy |
+| `hormones` | Manipulation and measurement of hormones |
+| `machinelearning` | Complex behavioral analysis |
+| `3dprint` | Open-source tool development |
+
+A paper can list several, separated by spaces: `techs: opto tracing behavior`.
+
+### If these tables go stale
+
+The files are always the truth. To regenerate the lists:
+
+```
+grep -h '^handle:' team/_posts/*.md          # member handles
+grep -h '^tag:'    projects/_posts/*.md      # project tags
+grep '^- key:'     _data/approaches.yml      # approach keys
+```
 
 ---
 
@@ -85,8 +134,8 @@ tags:
 | `shortref` | The small line under the thumbnail. `<i>et al.</i>` gives the italics. |
 | `image` | Path from the site root, with the leading slash. |
 | `fulltext`, `pdflink`, `pmid`, `doi`, `dryad_doi` | All optional. Leave blank rather than deleting — blank ones are skipped automatically. |
-| `tags` | Optional. One project tag to also show this paper on that project's page: `other`, `cholinergic`, `circadianda`, `cbas`, `scndmh`. |
-| `techs` | Optional. Space-separated approach keys, e.g. `opto tracing behavior`. Works both ways — the paper appears under those approaches on the Approaches page, and those approaches are listed on the paper's own page. Keys are defined in `_data/approaches.yml`. |
+| `tags` | Optional. **Project tags** (see the table above) to also show this paper under those projects. One value, or a YAML list for several: `tags: [circuit-state, pacemaker-dynamics]`. |
+| `techs` | Optional. Space-separated **approach keys** (see the table above), e.g. `opto tracing behavior`. Works both ways — the paper appears under those approaches on the Approaches page, and those approaches are listed on the paper's own page. |
 
 Occasionally useful: `preprint: true` adds a "PREPRINT (not yet peer-reviewed)" banner,
 `supplement: /pdfs/...` adds a supplement link, `skip: true` hides it from the papers index.
@@ -154,7 +203,7 @@ layout: research
 title: "Output pathways"
 question: "How does an SCN output pathway shape behavioral timing?"
 lab: [Nicole, Farina, Danny, Jeff]
-image: /images/misc/scndmh.png
+image: /images/misc/output_pathways.png
 tag: output-pathways
 ---
 
@@ -177,16 +226,12 @@ projects index.
 - **The date in the filename sets the order on the projects page** — newest first. To
   reorder the themes, change the dates.
 
-A paper can belong to more than one project. Use a YAML list in the paper's front
-matter:
+Adding a project here adds a row to the **project tags** table near the top of this file —
+worth updating so the reference stays accurate.
 
-```yaml
-tags: [circuit-state, pacemaker-dynamics]
-```
-
-This is why project tags must not contain spaces: Jekyll treats `tags:` as a list and
-splits a bare string on whitespace, so `tags: circuit state` would mean two separate
-tags named `circuit` and `state`.
+The no-spaces rule matters: Jekyll treats a paper's `tags:` as a list and splits a bare
+string on whitespace, so a tag like `circuit state` would be read as two separate tags,
+`circuit` and `state`, and would never match anything.
 
 The intro paragraph and the "Where this is going" section at the bottom of the projects
 page are page-level prose, not projects. They live in `projects/index.html` between the
