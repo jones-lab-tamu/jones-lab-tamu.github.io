@@ -17,7 +17,7 @@ category: paper
 preprint: true
 peerreview: true
 review: false
-tags: circuit-state pacemaker-dynamics
+tags: [circuit-state, pacemaker-dynamics]
 techs: photometry
 ---
 
